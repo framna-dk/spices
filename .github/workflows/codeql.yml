@@ -15,12 +15,12 @@ env:
   SWIFTUI_EXAMPLE_XCODE_SCHEME: SwiftUIExample
   UIKIT_EXAMPLE_XCODE_SCHEME: UIKitExample
   EXAMPLE_XCODE_PROJECT_PATH: Examples/Example.xcodeproj
-  BUILD_DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.5
-  DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+  BUILD_DESTINATION: platform=iOS Simulator,name=iPhone 17,OS=26.5
+  DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-15') || 'ubuntu-latest' }}
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-26') || 'ubuntu-latest' }}
     permissions:
       security-events: write
       packages: read
@@ -36,7 +36,7 @@ jobs:
           build-mode: manual
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:

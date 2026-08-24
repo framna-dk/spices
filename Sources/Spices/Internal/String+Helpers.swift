@@ -10,7 +10,7 @@ extension String {
 
     /// Split into camel case words, preserving initialisms like URL and HTTP.
     func camelCaseToNaturalText() -> String {
-        var pieces = [String]()
+        var pieces = [Self]()
         var currentPiece = ""
 
         for (idx, character) in zip(indices, self) {
