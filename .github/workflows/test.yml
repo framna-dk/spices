@@ -9,18 +9,18 @@ env:
 jobs:
   run-tests:
     name: Run Tests
-    runs-on: macos-15
+    runs-on: macos-26
     strategy:
       matrix:
         include:
-          - xcode: 16.4
-            destination: iPhone 16 Pro
-            os: 18.5
+          - xcode: 26
+            destination: iPhone 17 Pro
+            os: 26.5
     env:
       DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Test
         run: |
           set -o pipefail &&\
