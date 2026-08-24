@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - xcode: 26
+          - xcode: 26.6
             destination: iPhone 17 Pro
             os: 26.5
     env:
