@@ -79,7 +79,7 @@ open class SpiceEditorWindow: UIWindow {
 
 private extension SpiceEditorWindow {
     private func presentSpicesEditor(editing spiceStore: any SpiceStore) {
-        guard SpiceEditorWindow.presentedSpicesEditorViewController == nil else {
+        guard Self.presentedSpicesEditorViewController == nil else {
             return
         }
         let window = UIApplication.shared.shp_activeWindow
@@ -90,7 +90,7 @@ private extension SpiceEditorWindow {
             SpiceEditorViewController(editing: spiceStore)
         }
         topViewController?.present(viewController, animated: true)
-        SpiceEditorWindow.presentedSpicesEditorViewController = viewController
+        Self.presentedSpicesEditorViewController = viewController
     }
 }
 #endif

@@ -444,7 +444,7 @@ import SwiftUI
     /// A static subscript that provides access to the `Spice` property wrapper's value within a `SpiceStore`.
     ///
     /// This allows for reading and writing the value of the setting.
-    static public subscript<T: SpiceStore>(
+    public static subscript<T: SpiceStore>(
         _enclosingInstance instance: T,
         wrapped wrappedKeyPath: ReferenceWritableKeyPath<T, Value>,
         storage storageKeyPath: ReferenceWritableKeyPath<T, Self>
