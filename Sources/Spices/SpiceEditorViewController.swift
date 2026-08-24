@@ -39,6 +39,9 @@ private extension SpiceEditorViewController {
     private func configureSheetPresentation() {
         #if !os(visionOS)
         sheetPresentationController?.detents = [.medium(), .large()]
+        if #available(iOS 26.1, *) {
+            sheetPresentationController?.backgroundEffect = UIColorEffect(color: .systemBackground)
+        }
         #endif
     }
 }

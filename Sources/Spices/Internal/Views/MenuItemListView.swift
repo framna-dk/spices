@@ -18,12 +18,17 @@ struct MenuItemListView: View {
         }
         .disabled(!userInteraction.isEnabled)
         .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Done").fontWeight(.bold)
+                if #available(iOS 26.0, *) {
+                    Button(role: .close, action: dismiss)
+                } else {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done").fontWeight(.bold)
+                    }
                 }
             }
         }

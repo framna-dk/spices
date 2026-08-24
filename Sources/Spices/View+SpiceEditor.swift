@@ -93,6 +93,9 @@ private struct PresentSpiceEditorOnShakeViewModifier<Editor: View>: ViewModifier
                 let viewController = UIHostingController(rootView: editor)
                 #if !os(visionOS)
                 viewController.sheetPresentationController?.detents = [.medium(), .large()]
+                if #available(iOS 26.1, *) {
+                    viewController.sheetPresentationController?.backgroundEffect = UIColorEffect(color: .systemBackground)
+                }
                 #endif
                 window.rootViewController?.shp_topViewController.present(viewController, animated: true)
                 PresentedSpiceEditorBox.viewController = viewController
